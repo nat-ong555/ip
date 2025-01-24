@@ -10,7 +10,7 @@ public class TaskList {
 
     public void addTask(Task task) {
         this.taskList.add(task);
-        message.addTaskMessage(task);
+        message.addTaskMessage(task, taskList.size());
     }
 
     public void listTasks() {
