@@ -17,14 +17,29 @@ public class Pluto {
 
         while (true) {
             input = scanner.nextLine();
+            String[] parts = input.split(" ");
 
-            if (input.equals("bye")) {
-                message.showGoodbyeMessage();
-                break;
-            } else if (input.equals("list")) {
-                taskList.listTasks();
+            if (parts.length == 2) {
+                if (parts[0].equals("mark")) {
+                    int taskIndex = Integer.parseInt(parts[1]) - 1;
+                    taskList.markTask(taskIndex);
+                } else if (parts[0].equals("unmark")) {
+                    int taskIndex = Integer.parseInt(parts[1]) - 1;
+                    taskList.unmarkTask(taskIndex);
+                } else {
+                    Task t = new Task(input);
+                    taskList.addTask(t);
+                }
             } else {
-                taskList.addTask(input);
+                if (input.equals("bye")) {
+                    message.showGoodbyeMessage();
+                    break;
+                } else if (input.equals("list")) {
+                    taskList.listTasks();
+                } else {
+                    Task t = new Task(input);
+                    taskList.addTask(t);
+                }
             }
         }
 

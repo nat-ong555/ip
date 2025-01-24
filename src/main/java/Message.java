@@ -12,11 +12,21 @@ public class Message {
         System.out.println(goodbye);
     }
 
-    public void addTaskMessage(String task) {
-        System.out.println(" added: " + task);
+    public void addTaskMessage(Task task) {
+        System.out.println(" added: " + task.toString());
     }
 
-    public void listTaskMessage(String task, int index) {
-        System.out.println(index + ". " + task);
+    public void listTaskMessage(Task task, int index) {
+        System.out.println(index + ". " + task.getStatusIcon()+ " " + task.toString());
+    }
+
+    public void markTaskMessage(Task task) {
+        System.out.println("Nice! I've marked this task as done:");
+        System.out.println(task.taskStatusMessage());
+    }
+
+    public void unmarkTaskMessage(Task task) {
+        System.out.println("Ok, I've marked this task as not done yet:");
+        System.out.println(task.taskStatusMessage());
     }
 }
