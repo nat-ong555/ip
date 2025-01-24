@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 // for displaying messages from Pluto
 public class Message {
     public void showWelcomeMessage() {
@@ -10,5 +12,11 @@ public class Message {
         System.out.println(goodbye);
     }
 
+    public void addTaskMessage(String task) {
+        System.out.println(" added: " + task);
+    }
 
+    public void listTaskMessage(String task, int index) {
+        System.out.println(index + ". " + task);
+    }
 }

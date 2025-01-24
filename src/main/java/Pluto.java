@@ -1,10 +1,12 @@
 import java.util.Scanner;
 
 public class Pluto {
+    private TaskList taskList;
     private Message message;
 
     public Pluto() {
         this.message = new Message();
+        this.taskList = new TaskList();
     }
 
     public void run() {
@@ -19,9 +21,11 @@ public class Pluto {
             if (input.equals("bye")) {
                 message.showGoodbyeMessage();
                 break;
+            } else if (input.equals("list")) {
+                taskList.listTasks();
+            } else {
+                taskList.addTask(input);
             }
-
-            System.out.println(input);
         }
 
         scanner.close();
