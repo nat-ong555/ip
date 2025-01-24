@@ -1,10 +1,14 @@
 import java.util.Scanner;
 
 public class Pluto {
-    public static void main(String[] args) {
-        String greeting = "Hi! I am Pluto\n" + "What can I do for you today? \n\n";
-        String goodbye = "Bye! Hope to see you again :)";
-        System.out.println(greeting);
+    private Message message;
+
+    public Pluto() {
+        this.message = new Message();
+    }
+
+    public void run() {
+        message.showWelcomeMessage();
 
         Scanner scanner = new Scanner(System.in);
         String input;
@@ -13,7 +17,7 @@ public class Pluto {
             input = scanner.nextLine();
 
             if (input.equals("bye")) {
-                System.out.println(goodbye);
+                message.showGoodbyeMessage();
                 break;
             }
 
@@ -21,5 +25,8 @@ public class Pluto {
         }
 
         scanner.close();
+    }
+    public static void main(String[] args) {
+        new Pluto().run();
     }
 }
