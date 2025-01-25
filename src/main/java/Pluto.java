@@ -76,6 +76,14 @@ public class Pluto {
                         }
                         break;
 
+                    case "delete":
+                        if (parts.length < 2) {
+                            throw new PlutoException("Please provide a task number to delete");
+                        }
+                        int deleteIndex = Integer.parseInt(parts[1]) - 1;
+                        taskList.removeTask(deleteIndex);
+                        break;
+
                     default:
                         throw new PlutoException("I'm sorry, but I don't know what that means :-(");
                 }

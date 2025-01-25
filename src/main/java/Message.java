@@ -15,7 +15,7 @@ public class Message {
     public void addTaskMessage(Task task, int size) {
         System.out.println("Got it. I've added this task:");
         System.out.println(" " + task.toString());
-        System.out.println("Now you have " + size + " tasks in your list" );
+        System.out.println("Now you have " + size + " tasks in your list");
 
     }
 
@@ -31,5 +31,11 @@ public class Message {
     public void unmarkTaskMessage(Task task) {
         System.out.println("Ok, I've marked this task as not done yet:");
         System.out.println(task.taskStatusMessage());
+    }
+
+    public void removeTaskMessage(Task task, int size) {
+        System.out.println("Noted. I've remove this task: ");
+        System.out.println(task.toString());
+        System.out.println("Now you have " + size + " tasks in your list");
     }
 }

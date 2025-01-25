@@ -32,4 +32,12 @@ public class TaskList {
         t.markAsUndone();
         message.unmarkTaskMessage(t);
     }
+
+    public void removeTask(int taskIndex) throws PlutoException {
+        if (taskIndex < 0 || taskIndex >= taskList.size()) {
+            throw new PlutoException("Task number is out of range.");
+        }
+        Task removedTask = taskList.remove(taskIndex);
+        message.removeTaskMessage(removedTask, taskList.size());
+    }
 }
