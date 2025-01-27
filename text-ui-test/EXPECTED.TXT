@@ -1,3 +1,6 @@
+Hi! I am Pluto
+What can I do for you today?
+
 
 Got it. I've added this task:
   [T][ ] read book
@@ -39,6 +42,6 @@ Here are the tasks in your list:
 3. [T][ ] join sports club
 4. [T][ ] borrow book
 
-Bye. Hope to see you again soon!
+Bye. Hope to see you again :)
 
 
