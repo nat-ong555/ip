@@ -1,3 +1,5 @@
+package pluto;
+
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 public class Deadline extends Task {
@@ -9,7 +11,7 @@ public class Deadline extends Task {
 
     public Deadline(String description, String by, boolean isDone) {
         super(description, isDone);
-        this.by = by;
+        this.by = LocalDate.parse(by);
     }
 
     @Override

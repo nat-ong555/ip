@@ -1,4 +1,5 @@
-import java.util.ArrayList;
+package pluto;
+
 import java.util.List;
 public class TaskList {
     private List<Task> taskList;
@@ -36,7 +37,7 @@ public class TaskList {
 
     public void removeTask(int taskIndex) throws PlutoException {
         if (taskIndex < 0 || taskIndex >= taskList.size()) {
-            throw new PlutoException("Task number is out of range.");
+            throw new PlutoException("pluto.Task number is out of range.");
         }
         Task removedTask = taskList.remove(taskIndex);
         message.removeTaskMessage(removedTask, taskList.size());

@@ -1,6 +1,7 @@
+package pluto;
+
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-import java.util.Date;
 
 public class Event extends Task {
     protected LocalDate from;
@@ -13,8 +14,8 @@ public class Event extends Task {
 
     public Event(String description, String from, String to, boolean isDone) {
         super(description, isDone);
-        this.from = from;
-        this.to = to;
+        this.from = LocalDate.parse(from);
+        this.to = LocalDate.parse(to);
     }
 
     @Override

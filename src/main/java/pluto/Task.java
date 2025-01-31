@@ -1,3 +1,5 @@
+package pluto;
+
 public abstract class Task {
     protected static int i = 0;
     protected int index;
