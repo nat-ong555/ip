@@ -3,10 +3,12 @@ import java.util.Scanner;
 public class Pluto {
     private TaskList taskList;
     private Message message;
+    private Storage storage;
 
     public Pluto() {
         this.message = new Message();
-        this.taskList = new TaskList();
+        this.storage = new Storage("tasks.txt");
+        this.taskList = new TaskList(storage.loadTasks());
     }
 
     public void run() {
@@ -87,6 +89,8 @@ public class Pluto {
                     default:
                         throw new PlutoException("I'm sorry, but I don't know what that means :-(");
                 }
+
+                storage.saveTasks(taskList.getTaskList());
             } catch (PlutoException e) {
                 System.out.println("OOPS! " + e.getMessage());
             } catch (IndexOutOfBoundsException e) {
