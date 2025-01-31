@@ -1,9 +1,9 @@
-import java.util.ArrayList;
+package pluto;
 
-// for displaying messages from Pluto
+// for displaying messages from pluto.Pluto
 public class Message {
     public void showWelcomeMessage() {
-        String greeting = "Hi! I am Pluto\n" + "What can I do for you today? \n\n";
+        String greeting = "Hi! I am pluto.Pluto\n" + "What can I do for you today? \n\n";
         System.out.println(greeting);
     }
 

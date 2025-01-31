@@ -1,6 +1,6 @@
+package pluto;
+
 import java.util.Scanner;
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 
 public class Pluto {
     private TaskList taskList;
@@ -97,9 +97,9 @@ public class Pluto {
             } catch (PlutoException e) {
                 System.out.println("OOPS! " + e.getMessage());
             } catch (IndexOutOfBoundsException e) {
-                System.out.println("OOPS! Task number is out of range");
+                System.out.println("OOPS! pluto.Task number is out of range");
             } catch (NumberFormatException e) {
-                System.out.println("OOPS! Task number must be a valid number.");
+                System.out.println("OOPS! pluto.Task number must be a valid number.");
             }
         }
 
