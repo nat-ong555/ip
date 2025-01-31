@@ -1,10 +1,11 @@
 import java.util.ArrayList;
+import java.util.List;
 public class TaskList {
-    private ArrayList<Task> taskList;
+    private List<Task> taskList;
     private Message message;
 
-    public TaskList() {
-        this.taskList = new ArrayList<>();
+    public TaskList(List<Task> tasks) {
+        this.taskList = tasks;
         this.message = new Message();
     }
 
@@ -39,5 +40,9 @@ public class TaskList {
         }
         Task removedTask = taskList.remove(taskIndex);
         message.removeTaskMessage(removedTask, taskList.size());
+    }
+
+    public List<Task> getTaskList() {
+        return this.taskList;
     }
 }

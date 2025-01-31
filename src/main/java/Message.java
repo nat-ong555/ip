@@ -38,4 +38,12 @@ public class Message {
         System.out.println(task.toString());
         System.out.println("Now you have " + size + " tasks in your list");
     }
+
+    public static void newListMessage() {
+        System.out.println("No existing saved file found, creating a new empty list");
+    }
+
+    public static void showErrorMessage(String message) {
+        System.out.println(message);
+    }
 }
