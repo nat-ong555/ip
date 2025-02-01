@@ -7,12 +7,18 @@ public class Pluto {
     private Message message;
     private Storage storage;
 
+    /**
+     * Creates the chatbot Pluto
+     */
     public Pluto() {
         this.message = new Message();
         this.storage = new Storage("tasks.txt");
         this.taskList = new TaskList(storage.loadTasks());
     }
 
+    /**
+     * Runs the chatbot's main program
+     */
     public void run() {
         message.showWelcomeMessage();
 

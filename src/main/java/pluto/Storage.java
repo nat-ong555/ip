@@ -10,13 +10,26 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Storage class that handles the loading
+ * and saving of tasks for recurring use
+ */
 public class Storage {
     private String filePath;
 
+    /**
+     * Creates a new Storage
+     * @param filePath a String which specifies the file that stores
+     *                 the task list
+     */
     public Storage(String filePath) {
         this.filePath = filePath;
     }
 
+    /**
+     * Loads the tasks from the file
+     * @return a List of Tasks loaded from the file
+     */
     public List<Task> loadTasks() {
         List<Task> tasks = new ArrayList<>();
         File file = new File(filePath);
@@ -37,6 +50,10 @@ public class Storage {
         return tasks;
     }
 
+    /**
+     * Saves the updated task list to the storage file
+     * @param tasks the updated List of Tasks
+     */
     public void saveTasks(List<Task> tasks) {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(filePath))) {
             for (Task task : tasks) {
