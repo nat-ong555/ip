@@ -46,4 +46,16 @@ public class TaskList {
     public List<Task> getTaskList() {
         return this.taskList;
     }
+
+    public void findTasks(String keyword) {
+        System.out.println("Here are the matching tasks in your list: ");
+        int count = 1;
+
+        for (Task task : taskList) {
+            if (task.isDescriptionMatching(keyword)) {
+                message.listTaskMessage(task, count);
+                count++;
+            }
+        }
+    }
 }
