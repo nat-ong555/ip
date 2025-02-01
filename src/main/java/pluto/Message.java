@@ -2,16 +2,29 @@ package pluto;
 
 // for displaying messages from pluto.Pluto
 public class Message {
+
+    /**
+     * Displays the welcome message when bot is started up
+     */
     public void showWelcomeMessage() {
         String greeting = "Hi! I am pluto.Pluto\n" + "What can I do for you today? \n\n";
         System.out.println(greeting);
     }
 
+    /**
+     * Displays goodbye message when bot is exited
+     */
     public void showGoodbyeMessage() {
         String goodbye = "Bye! Hope to see you again :)";
         System.out.println(goodbye);
     }
 
+    /**
+     * Displays message that task is added to the list
+     * Displays the new number of tasks in the list
+     * @param task the Task to be added
+     * @param size an int that shows the new number of tasks in the list
+     */
     public void addTaskMessage(Task task, int size) {
         System.out.println("Got it. I've added this task:");
         System.out.println(" " + task.toString());
@@ -19,14 +32,24 @@ public class Message {
 
     }
 
+    /**
+     * Lists the current task
+     * @param task the current Task
+     * @param index the index of the Task in the list
+     */
     public void listTaskMessage(Task task, int index) {
         System.out.println(index + ". " + task.toString());
     }
 
+    /**
+     * Displays the task's status after being marked completed
+     * @param task the Task that is marked completed
+     */
     public void markTaskMessage(Task task) {
         System.out.println("Nice! I've marked this task as done:");
         System.out.println(task.taskStatusMessage());
     }
+
 
     public void unmarkTaskMessage(Task task) {
         System.out.println("Ok, I've marked this task as not done yet:");

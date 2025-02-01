@@ -4,11 +4,25 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 public class Deadline extends Task {
     protected LocalDate by;
+
+    /**
+     * Creates a new task, Deadline, where
+     * users can specify an end date for the task
+     * @param description a String describing the task
+     * @param by a String that specifies the end date of task
+     */
     public Deadline(String description, String by) {
         super(description);
         this.by = LocalDate.parse(by);
     }
 
+    /**
+     * Creates a new task, Deadline, where users can
+     * specify an end date, and whether the task is done
+     * @param description a String that describes the task
+     * @param by a String that specifies the end date of task
+     * @param isDone a boolean that indicates whether task is completed
+     */
     public Deadline(String description, String by, boolean isDone) {
         super(description, isDone);
         this.by = LocalDate.parse(by);
@@ -20,6 +34,10 @@ public class Deadline extends Task {
         return "[D]" + super.taskStatusMessage() + " (by: " + date + ")";
     }
 
+    /**
+     * Converts task to file format to be stored in tasks file
+     * @return a String to be stored in tasks file
+     */
     @Override
     public String toFileFormat() {
         return "D | " + (isDone ? "1" : "0") + " | " + description + " | " + by;
