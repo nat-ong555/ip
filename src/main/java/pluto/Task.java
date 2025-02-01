@@ -82,4 +82,8 @@ public abstract class Task {
                 return null;
         }
     }
+
+    public boolean isDescriptionMatching(String keyword) {
+        return this.description.contains(keyword);
+    }
 }
