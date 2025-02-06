@@ -72,14 +72,14 @@ public abstract class Task {
         String[] parts = line.split(" \\| ");
         boolean isDone = parts[1].equals("1");
         switch (parts[0]) {
-            case "T":
-                return new ToDo(parts[2], isDone);
-            case "D":
-                return new Deadline(parts[2], parts[3], isDone);
-            case "E":
-                return new Event(parts[2], parts[3], parts[4], isDone);
-            default:
-                return null;
+        case "T":
+            return new ToDo(parts[2], isDone);
+        case "D":
+            return new Deadline(parts[2], parts[3], isDone);
+        case "E":
+            return new Event(parts[2], parts[3], parts[4], isDone);
+        default:
+            return null;
         }
     }
 
