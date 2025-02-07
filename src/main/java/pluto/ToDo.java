@@ -1,5 +1,10 @@
 package pluto;
 
+/**
+ * Represents a todo task
+ * This task has a description, but no specified
+ * start or end date
+ */
 public class ToDo extends Task {
     /**
      * Creates a new task with no specified end date

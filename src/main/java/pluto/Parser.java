@@ -1,5 +1,9 @@
 package pluto;
 
+/**
+ * Represents a Parser class. This class processes
+ * and handles user commands
+ */
 public class Parser {
     private static final String COMMAND_TODO = "todo";
     private static final String COMMAND_DEADLINE = "deadline";
@@ -16,6 +20,12 @@ public class Parser {
         this.taskList = taskList;
     }
 
+    /**
+     * Parses all the user commands to be
+     * handled by the chatbot
+     * @param input the String that is the user's command
+     * @throws PlutoException if the command format is incorrect
+     */
     public void parse(String input) throws PlutoException {
         String[] parts = input.split(" ", 2);
         String command = parts[0].trim().toLowerCase();
@@ -48,7 +58,8 @@ public class Parser {
             break;
         case COMMAND_DEADLINE:
             if (parts.length < 2 || !parts[1].contains(" /by ")) {
-                throw new PlutoException("The deadline format is incorrect. Please use: deadline <task> /by <yyyy-mm-dd>");
+                throw new PlutoException("The deadline format is incorrect. "
+                        + "Please use: deadline <task> /by <yyyy-mm-dd>");
             } else {
                 String[] deadlineParts = parts[1].split(" /by ", 2);
                 Deadline deadline = new Deadline(deadlineParts[0], deadlineParts[1]);
@@ -57,8 +68,8 @@ public class Parser {
             break;
         case COMMAND_EVENT:
             if (parts.length < 2 || !parts[1].contains(" /from ") || !parts[1].contains(" /to ")) {
-                throw new PlutoException("The event format is incorrect. Please use: " +
-                        "event <task> /from <yyyy-mm-dd> /to <yyyy-mm-dd>");
+                throw new PlutoException("The event format is incorrect. Please use: "
+                        + "event <task> /from <yyyy-mm-dd> /to <yyyy-mm-dd>");
             } else {
                 String[] eventParts = parts[1].split(" /from | /to ", 3);
                 Event event = new Event(eventParts[0], eventParts[1], eventParts[2]);

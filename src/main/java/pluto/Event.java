@@ -3,6 +3,10 @@ package pluto;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
+/**
+ * Represents an Event task. This task has
+ * a description and a specified start and end date
+ */
 public class Event extends Task {
     protected LocalDate from;
     protected LocalDate to;

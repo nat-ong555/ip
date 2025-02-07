@@ -2,6 +2,11 @@ package pluto;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+
+/**
+ * Represents a Deadline task. It is a task
+ * with a description and a specified end date
+ */
 public class Deadline extends Task {
     protected LocalDate by;
 
