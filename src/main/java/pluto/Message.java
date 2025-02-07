@@ -1,6 +1,9 @@
 package pluto;
 
-// for displaying messages from pluto.Pluto
+/**
+ * Represents a Message class. This class
+ * is in charge of displaying messages from Pluto
+ */
 public class Message {
 
     /**
@@ -50,12 +53,22 @@ public class Message {
         System.out.println(task.taskStatusMessage());
     }
 
-
+    /**
+     * Displays the task's status after being marked as undone
+     * @param task the Task to be marked as undone
+     */
     public void unmarkTaskMessage(Task task) {
         System.out.println("Ok, I've marked this task as not done yet:");
         System.out.println(task.taskStatusMessage());
     }
 
+    /**
+     * Displays the message and task list size after
+     * a task is removed
+     * @param task the Task to be removed
+     * @param size the size of the task list after
+     *             the specified task is removed
+     */
     public void removeTaskMessage(Task task, int size) {
         System.out.println("Noted. I've remove this task: ");
         System.out.println(task.toString());

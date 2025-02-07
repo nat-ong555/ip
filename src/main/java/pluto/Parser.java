@@ -1,5 +1,9 @@
 package pluto;
 
+/**
+ * Represents a Parser class. This class processes
+ * and handles user commands
+ */
 public class Parser {
     private static final String COMMAND_TODO = "todo";
     private static final String COMMAND_DEADLINE = "deadline";
@@ -16,6 +20,12 @@ public class Parser {
         this.taskList = taskList;
     }
 
+    /**
+     * Parses all the user commands to be
+     * handled by the chatbot
+     * @param input the String that is the user's command
+     * @throws PlutoException if the command format is incorrect
+     */
     public void parse(String input) throws PlutoException {
         String[] parts = input.split(" ", 2);
         String command = parts[0].trim().toLowerCase();

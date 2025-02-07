@@ -2,6 +2,10 @@ package pluto;
 
 import java.util.Scanner;
 
+/**
+ * Represents the main Pluto class. This class
+ * runs the main function that starts the chatbot
+ */
 public class Pluto {
     private TaskList taskList;
     private Message message;

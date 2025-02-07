@@ -1,5 +1,11 @@
 package pluto;
 
+/**
+ * Represents a Task. This class encapsulates the
+ * description, index and completion status of a task
+ * Common functionalities include marking a task as
+ * done/undone, and changing the tasks from file format
+ */
 public abstract class Task {
     protected static int i = 0;
     protected int index;
@@ -17,6 +23,13 @@ public abstract class Task {
         this.isDone = false;
     }
 
+    /**
+     * Constructs a Task with the specified description and
+     * completion status
+     * @param description a String that is the description of the task
+     * @param isDone a boolean value that represents the completion status
+     *               of a task
+     */
     public Task(String description, boolean isDone) {
         this.index = i++;
         this.description = description;

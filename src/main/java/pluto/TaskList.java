@@ -1,6 +1,12 @@
 package pluto;
 
 import java.util.List;
+
+/**
+ * Represents a list of Tasks. This class handles the
+ * different tasks in the list, with methods such as
+ * adding, removing, and listing tasks
+ */
 public class TaskList {
     private List<Task> taskList;
     private Message message;
@@ -72,6 +78,11 @@ public class TaskList {
         return this.taskList;
     }
 
+    /**
+     * Finds tasks with matching keyword and
+     * displays it to the user
+     * @param keyword a String that describes the specific keyword
+     */
     public void findTasks(String keyword) {
         System.out.println("Here are the matching tasks in your list: ");
         int count = 1;
