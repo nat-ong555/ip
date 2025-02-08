@@ -26,34 +26,35 @@ public class Parser {
      * @param input the String that is the user's command
      * @throws PlutoException if the command format is incorrect
      */
-    public void parse(String input) throws PlutoException {
+    public String parse(String input) throws PlutoException {
         String[] parts = input.split(" ", 2);
         String command = parts[0].trim().toLowerCase();
+        String response;
 
         switch (command) {
         case COMMAND_LIST:
-            taskList.listTasks();
+            response = taskList.listTasks();
             break;
         case COMMAND_MARK:
             if (parts.length < 2) {
                 throw new PlutoException("Please provide a task number to mark.");
             }
             int markIndex = Integer.parseInt(parts[1]) - 1;
-            taskList.markTask(markIndex);
+            response = taskList.markTask(markIndex);
             break;
         case COMMAND_UNMARK:
             if (parts.length < 2) {
                 throw new PlutoException("Please provide a task number to unmark.");
             }
             int unmarkIndex = Integer.parseInt(parts[1]) - 1;
-            taskList.unmarkTask(unmarkIndex);
+            response = taskList.unmarkTask(unmarkIndex);
             break;
         case COMMAND_TODO:
             if (parts.length < 2) {
                 throw new PlutoException("The description of a todo cannot be empty.");
             } else {
                 ToDo todo = new ToDo(parts[1]);
-                taskList.addTask(todo);
+                response = taskList.addTask(todo);
             }
             break;
         case COMMAND_DEADLINE:
@@ -63,7 +64,7 @@ public class Parser {
             } else {
                 String[] deadlineParts = parts[1].split(" /by ", 2);
                 Deadline deadline = new Deadline(deadlineParts[0], deadlineParts[1]);
-                taskList.addTask(deadline);
+                response = taskList.addTask(deadline);
             }
             break;
         case COMMAND_EVENT:
@@ -73,7 +74,7 @@ public class Parser {
             } else {
                 String[] eventParts = parts[1].split(" /from | /to ", 3);
                 Event event = new Event(eventParts[0], eventParts[1], eventParts[2]);
-                taskList.addTask(event);
+                response = taskList.addTask(event);
             }
             break;
         case COMMAND_DELETE:
@@ -81,18 +82,19 @@ public class Parser {
                 throw new PlutoException("Please provide a task number to delete");
             }
             int deleteIndex = Integer.parseInt(parts[1]) - 1;
-            taskList.removeTask(deleteIndex);
+            response = taskList.removeTask(deleteIndex);
             break;
         case COMMAND_FIND:
             if (parts.length < 2) {
                 throw new PlutoException("Please provide a keyword for searching");
             } else {
                 String keyword = parts[1];
-                taskList.findTasks(keyword);
+                response = taskList.findTasks(keyword);
             }
             break;
         default:
             throw new PlutoException("I'm sorry, but I don't know what that means :-(");
         }
+        return response;
     }
 }
