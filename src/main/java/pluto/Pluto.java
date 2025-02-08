@@ -25,33 +25,24 @@ public class Pluto {
     /**
      * Runs the chatbot's main program
      */
-    public void run() {
-        message.showWelcomeMessage();
-
-        Scanner scanner = new Scanner(System.in);
-        String input;
-
-        while (true) {
-            try {
-                input = scanner.nextLine();
-                if (input.equals("bye")) {
-                    message.showGoodbyeMessage();
-                    break;
-                }
-                parser.parse(input);
-                storage.saveTasks(taskList.getTaskList());
-            } catch (PlutoException e) {
-                System.out.println("OOPS! " + e.getMessage());
-            } catch (IndexOutOfBoundsException e) {
-                System.out.println("OOPS! Task number is out of range");
-            } catch (NumberFormatException e) {
-                System.out.println("OOPS! Task number must be a valid number");
+    public String getResponse(String input) {
+        try {
+            if (input.equals("bye")) {
+                return message.showGoodbyeMessage();
             }
+            String response = parser.parse(input);
+            storage.saveTasks(taskList.getTaskList());
+            return response;
+        } catch (PlutoException e) {
+            return "OOPS! " + e.getMessage();
+        } catch (IndexOutOfBoundsException e) {
+            return "OOPS! Task number is out of range";
+        } catch (NumberFormatException e) {
+            return "OOPS! Task number must be a valid number";
         }
-        scanner.close();
     }
 
-    public static void main(String[] args) {
-        new Pluto().run();
+    public String displayWelcomeMessage() {
+        return message.showWelcomeMessage();
     }
 }

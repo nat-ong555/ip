@@ -25,40 +25,41 @@ public class TaskList {
      * Adds the task to the task list
      * @param task the Task to be added to the list
      */
-    public void addTask(Task task) {
+    public String addTask(Task task) {
         this.taskList.add(task);
-        message.addTaskMessage(task, taskList.size());
+        return message.addTaskMessage(task, taskList.size());
     }
 
     /**
      * Lists all the tasks currently in the task list
      */
-    public void listTasks() {
-        System.out.println("Here are the tasks in your list:");
+    public String listTasks() {
+        String response = "Here are the tasks in your list:\n";
         for (int i = 0; i < taskList.size(); i++) {
             int index = i + 1;
-            message.listTaskMessage(taskList.get(i), index);
+            response += message.listTaskMessage(taskList.get(i), index);
         }
+        return response;
     }
 
     /**
      * Marks the specified task as completed
      * @param taskIndex the index of the specified task in the list
      */
-    public void markTask(int taskIndex) {
+    public String markTask(int taskIndex) {
         Task t = taskList.get(taskIndex);
         t.markAsDone();
-        message.markTaskMessage(t);
+        return message.markTaskMessage(t);
     }
 
     /**
      * Marks the specified task as not completed
      * @param taskIndex the index of the specified task in the list
      */
-    public void unmarkTask(int taskIndex) {
+    public String unmarkTask(int taskIndex) {
         Task t = taskList.get(taskIndex);
         t.markAsUndone();
-        message.unmarkTaskMessage(t);
+        return message.unmarkTaskMessage(t);
     }
 
     /**
@@ -66,12 +67,12 @@ public class TaskList {
      * @param taskIndex the index of the specified task in the list
      * @throws PlutoException if the task index is out of bounds
      */
-    public void removeTask(int taskIndex) throws PlutoException {
+    public String removeTask(int taskIndex) throws PlutoException {
         if (taskIndex < 0 || taskIndex >= taskList.size()) {
             throw new PlutoException("pluto.Task number is out of range.");
         }
         Task removedTask = taskList.remove(taskIndex);
-        message.removeTaskMessage(removedTask, taskList.size());
+        return message.removeTaskMessage(removedTask, taskList.size());
     }
 
     public List<Task> getTaskList() {
@@ -83,15 +84,16 @@ public class TaskList {
      * displays it to the user
      * @param keyword a String that describes the specific keyword
      */
-    public void findTasks(String keyword) {
-        System.out.println("Here are the matching tasks in your list: ");
+    public String findTasks(String keyword) {
+        String response = "Here are the matching tasks in your list:\n";
         int count = 1;
 
         for (Task task : taskList) {
             if (task.isDescriptionMatching(keyword)) {
-                message.listTaskMessage(task, count);
+                response += message.listTaskMessage(task, count);
                 count++;
             }
         }
+        return response;
     }
 }
