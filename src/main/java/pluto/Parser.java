@@ -17,6 +17,7 @@ public class Parser {
 
 
     public Parser(TaskList taskList) {
+        assert taskList != null : "taskList should not be null";
         this.taskList = taskList;
     }
 
@@ -28,6 +29,7 @@ public class Parser {
      */
     public String parse(String input) throws PlutoException {
         String[] parts = input.split(" ", 2);
+        assert parts.length > 0 : "Input split should produce at least one part";
         String command = parts[0].trim().toLowerCase();
         String response;
 
@@ -40,6 +42,7 @@ public class Parser {
                 throw new PlutoException("Please provide a task number to mark.");
             }
             int markIndex = Integer.parseInt(parts[1]) - 1;
+            assert markIndex >= 0 : "Mark index should be non-negative";
             response = taskList.markTask(markIndex);
             break;
         case COMMAND_UNMARK:
@@ -47,6 +50,7 @@ public class Parser {
                 throw new PlutoException("Please provide a task number to unmark.");
             }
             int unmarkIndex = Integer.parseInt(parts[1]) - 1;
+            assert unmarkIndex >= 0 : "Unmark index should be non-negative";
             response = taskList.unmarkTask(unmarkIndex);
             break;
         case COMMAND_TODO:
@@ -82,6 +86,7 @@ public class Parser {
                 throw new PlutoException("Please provide a task number to delete");
             }
             int deleteIndex = Integer.parseInt(parts[1]) - 1;
+            assert deleteIndex >= 0 : "Delete index should be non-negative";
             response = taskList.removeTask(deleteIndex);
             break;
         case COMMAND_FIND:

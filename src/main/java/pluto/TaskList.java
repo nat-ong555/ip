@@ -26,6 +26,7 @@ public class TaskList {
      * @param task the Task to be added to the list
      */
     public String addTask(Task task) {
+        assert task != null : "Task should not be null";
         this.taskList.add(task);
         return message.addTaskMessage(task, taskList.size());
     }
@@ -47,6 +48,8 @@ public class TaskList {
      * @param taskIndex the index of the specified task in the list
      */
     public String markTask(int taskIndex) {
+        assert taskIndex >= 0 && taskIndex < taskList.size()
+                : "Invalid task index for marking";
         Task t = taskList.get(taskIndex);
         t.markAsDone();
         return message.markTaskMessage(t);
@@ -57,6 +60,8 @@ public class TaskList {
      * @param taskIndex the index of the specified task in the list
      */
     public String unmarkTask(int taskIndex) {
+        assert taskIndex >= 0 && taskIndex < taskList.size()
+                : "Invalid task index for unmarking";
         Task t = taskList.get(taskIndex);
         t.markAsUndone();
         return message.unmarkTaskMessage(t);
