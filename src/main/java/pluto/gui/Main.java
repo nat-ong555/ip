@@ -10,6 +10,9 @@ import javafx.stage.Stage;
 
 import pluto.Pluto;
 
+/**
+ * The Main class initializes the JavaFX application
+ */
 public class Main extends Application {
     private Pluto pluto = new Pluto();
 

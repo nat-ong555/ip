@@ -24,6 +24,11 @@ public class DialogBox extends HBox {
     @FXML
     private ImageView displayPicture;
 
+    /**
+     * Creates a DialogBox with the given text and image
+     * @param s the String of text to be displayed
+     * @param i an Image of the speaker
+     */
     public DialogBox(String s, Image i) {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(MainWindow.class.getResource("/view/DialogBox.fxml"));
@@ -38,6 +43,10 @@ public class DialogBox extends HBox {
         displayPicture.setImage(i);
     }
 
+    /**
+     * Flips the DialogBox such that the ImageView is
+     * on the left
+     */
     private void flip() {
         ObservableList<Node> tmp = FXCollections.observableArrayList(this.getChildren());
         Collections.reverse(tmp);
