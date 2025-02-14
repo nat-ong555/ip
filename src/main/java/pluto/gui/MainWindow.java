@@ -9,6 +9,9 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
 import pluto.Pluto;
 
+/**
+ * Represents the main window of Pluto's GUI
+ */
 public class MainWindow extends AnchorPane{
     @FXML
     private ScrollPane scrollPane;
@@ -30,7 +33,8 @@ public class MainWindow extends AnchorPane{
     }
 
     /**
-     * Injects the Pluto instance
+     * Injects the Pluto instance and displays the welcome message
+     * @param p the Pluto instance to be set
      */
     public void setPluto(Pluto p) {
         pluto = p;

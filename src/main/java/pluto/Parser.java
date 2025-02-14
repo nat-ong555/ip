@@ -15,7 +15,11 @@ public class Parser {
     private static final String COMMAND_FIND = "find";
     private TaskList taskList;
 
-
+    /**
+     * Creates a new Parser to process user commands
+     * @param taskList the Task List that contains
+     *                 the tasks added by users
+     */
     public Parser(TaskList taskList) {
         assert taskList != null : "taskList should not be null";
         this.taskList = taskList;
