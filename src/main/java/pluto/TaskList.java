@@ -101,4 +101,18 @@ public class TaskList {
         }
         return response;
     }
+
+    public String scheduleTasks(String date) {
+        String response = "Here are the tasks scheduled for today:\n";
+        int count = 1;
+
+        for (Task task : taskList) {
+            if (task.isScheduledFor(date)) {
+                response += message.listTaskMessage(task, count);
+                count++;
+            }
+        }
+        return response;
+    }
+
 }

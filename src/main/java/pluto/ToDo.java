@@ -31,4 +31,9 @@ public class ToDo extends Task {
     public String toFileFormat() {
         return "T | " + (isDone ? "1" : "0") + " | " + description;
     }
+
+    @Override
+    public boolean isScheduledFor(String dateInput) {
+        return false; // ToDo tasks have no specific date attached
+    }
 }
