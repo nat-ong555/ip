@@ -1,5 +1,6 @@
 package pluto;
 
+
 /**
  * Represents a Parser class. This class processes
  * and handles user commands
@@ -13,6 +14,7 @@ public class Parser {
     private static final String COMMAND_LIST = "list";
     private static final String COMMAND_DELETE = "delete";
     private static final String COMMAND_FIND = "find";
+    private static final String COMMAND_SCHEDULE = "schedule";
     private TaskList taskList;
 
     /**
@@ -99,6 +101,15 @@ public class Parser {
             } else {
                 String keyword = parts[1];
                 response = taskList.findTasks(keyword);
+            }
+            break;
+        case COMMAND_SCHEDULE:
+            if (parts.length < 2) {
+                throw new PlutoException("Please provide a date for searching. " +
+                        "Use: schedule <yyyy-mm-dd>");
+            } else {
+                String date = parts[1];
+                response = taskList.scheduleTasks(date);
             }
             break;
         default:

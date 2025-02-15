@@ -8,8 +8,8 @@ import java.time.format.DateTimeFormatter;
  * a description and a specified start and end date
  */
 public class Event extends Task {
-    protected LocalDate from;
-    protected LocalDate to;
+    private LocalDate from;
+    private LocalDate to;
 
     /**
      * Creates a new Task, Event, where users can
@@ -53,5 +53,18 @@ public class Event extends Task {
     @Override
     public String toFileFormat() {
         return "E | " + (isDone ? "1" : "0") + " | " + description + " | " + from + " | " + to;
+    }
+
+    /**
+     * Checks if the task is happening on a specific day
+     * @param dateInput the Date of the day
+     * @return a boolean that indicates if the task
+     * is happening on that day
+     */
+    @Override
+    public boolean isScheduledFor(String dateInput) {
+        LocalDate date = LocalDate.parse(dateInput);
+        return (date.isEqual(this.from) || date.isEqual(this.to) ||
+                (date.isAfter(this.from) && date.isBefore(this.to)));
     }
 }

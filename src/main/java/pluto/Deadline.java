@@ -8,7 +8,7 @@ import java.time.format.DateTimeFormatter;
  * with a description and a specified end date
  */
 public class Deadline extends Task {
-    protected LocalDate by;
+    private LocalDate by;
 
     /**
      * Creates a new task, Deadline, where
@@ -46,5 +46,17 @@ public class Deadline extends Task {
     @Override
     public String toFileFormat() {
         return "D | " + (isDone ? "1" : "0") + " | " + description + " | " + by;
+    }
+
+    /**
+     * Checks if the Task is due on a specific day
+     * @param dateInput the Date of the day
+     * @return a boolean that indicates if the task
+     * is due that day
+     */
+    @Override
+    public boolean isScheduledFor(String dateInput) {
+        LocalDate date = LocalDate.parse(dateInput);
+        return date.isEqual(this.by);
     }
 }

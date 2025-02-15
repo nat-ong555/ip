@@ -75,6 +75,8 @@ public abstract class Task {
 
     public abstract String toFileFormat();
 
+    public abstract boolean isScheduledFor(String dateInput);
+
     /**
      * Converts the task list from file format
      * to the display format on the chatbot
