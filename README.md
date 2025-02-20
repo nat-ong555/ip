@@ -50,7 +50,7 @@ Format: unmark TASK_INDEX_NUMBER
 ### todo
 Adds a ToDo task (a task with no date specified) to your task list 
 
-Format: todo TASK_DESCRIPTION
+Format: todo TASK_DESCRIPTION `#RRGGBB`
 
 ### deadline
 Adds a Deadline task (a task with specified end date) to your task list
