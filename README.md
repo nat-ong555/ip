@@ -1,6 +1,6 @@
 # Pluto ChatBot
 
-This is a project template for a greenfield Java project. It's named after the Java mascot _Duke_. Given below are instructions on how to use it.
+Pluto is a chatbot for managing your tasks and schedule
 
 ## Setting up in Intellij
 
@@ -24,3 +24,9 @@ Prerequisites: JDK 17, update Intellij to the most recent version.
    ```
 
 **Warning:** Keep the `src\main\java` folder as the root folder for Java files (i.e., don't rename those folders or move Java files to another folder outside of this folder path), as this is the default location some tools (e.g., Gradle) expect to find Java files.
+
+## Commands
+
+### help
+Lists out all possible commands that Pluto can execute
+format: help
