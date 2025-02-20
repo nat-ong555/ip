@@ -29,4 +29,35 @@ Prerequisites: JDK 17, update Intellij to the most recent version.
 
 ### help
 Lists out all possible commands that Pluto can execute
-format: help
+
+Format: help
+
+### list
+Lists out all the tasks in your task list
+
+Format: list
+
+### mark
+Marks a task as completed
+
+Format: mark TASK_INDEX_NUMBER
+
+### unmark
+Marks a task as not completed
+
+Format: unmark TASK_INDEX_NUMBER
+
+### todo
+Adds a ToDo task (a task with no date specified) to your task list 
+
+Format: todo TASK_DESCRIPTION
+
+### deadline
+Adds a Deadline task (a task with specified end date) to your task list
+
+Format: deadline TASK_DESCRIPTION /by YYYY-MM-DD
+
+### event
+Adds an Event task (a task with specified start and end date) to your task list
+
+Format: event TASK_DESCRIPTION /from YYYY-MM-DD /to YYYY-MM-DD
