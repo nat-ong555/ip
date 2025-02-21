@@ -79,4 +79,7 @@ Format: `schedule YYYY-MM-DD`
 Example: 
 - `schedule 2025-02-10` Returns a list of all the tasks due/happening on Feb 10 2025
 
+### Exiting the chatbot: `bye`
+Exits the chatbot
 
+Format: `bye`
