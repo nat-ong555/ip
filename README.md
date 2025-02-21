@@ -61,3 +61,18 @@ Format: `deadline TASK_DESCRIPTION /by YYYY-MM-DD`
 Adds an Event task (a task with specified start and end date) to your task list
 
 Format: `event TASK_DESCRIPTION /from YYYY-MM-DD /to YYYY-MM-DD`
+
+### delete
+Deletes a task from your task list
+
+Format: `delete TASK_INDEX_NUMBER`
+
+### find
+Finds all the tasks with the specified keyword in your task list
+
+Format: `find KEYWORD`
+
+### schedule
+Lists out all the tasks due/happening on a specified date
+
+Format: `schedule YYYY-MM-DD`
