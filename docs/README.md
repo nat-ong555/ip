@@ -80,25 +80,3 @@ Example:
 - `schedule 2025-02-10` Returns a list of all the tasks due/happening on Feb 10 2025
 
 
-## Adding deadlines
-
-// Describe the action and its outcome.
-
-// Give examples of usage
-
-Example: `keyword (optional arguments)`
-
-// A description of the expected outcome goes here
-
-```
-expected output
-```
-
-## Feature ABC
-
-// Feature details
-
-
-## Feature XYZ
-
-// Feature details
