@@ -19,6 +19,9 @@ Format: `mark TASK_INDEX_NUMBER`
 
 Example: 
 - `mark 2` Marks the task at index 2 as completed
+- ```
+  [X] read book
+  ```
 
 ### Unmarking a task: `unmark`
 Marks a task as not completed
