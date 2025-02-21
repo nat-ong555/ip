@@ -1,6 +1,6 @@
 # Pluto User Guide
 
-![Photo of the chatbot](./docs/Ui.png)
+![Photo of the chatbot](./Ui.png)
 
 Pluto is an easy-to-use task managing chatbot that helps you to organize your tasks.
 This guide will walk you through the available commands and what they do.
