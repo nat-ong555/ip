@@ -27,10 +27,10 @@ Prerequisites: JDK 17, update Intellij to the most recent version.
 
 ## Commands
 
-### help
-Lists out all possible commands that Pluto can execute
+1. help
+   - Lists out all possible commands that Pluto can execute
 
-Format: `help`
+   - Format: `help`
 
 ### list
 Lists out all the tasks in your task list
