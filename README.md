@@ -32,47 +32,47 @@ Prerequisites: JDK 17, update Intellij to the most recent version.
 
    - Format: `help`
 
-### list
-Lists out all the tasks in your task list
+2. list
+   - Lists out all the tasks in your task list
 
-Format: `list`
+   - Format: `list`
 
-### mark
-Marks a task as completed
+3. mark
+   - Marks a task as completed
 
-Format: `mark TASK_INDEX_NUMBER`
+   - Format: `mark TASK_INDEX_NUMBER`
 
-### unmark
-Marks a task as not completed
+4. unmark
+   - Marks a task as not completed
 
-Format: `unmark TASK_INDEX_NUMBER`
+   - Format: `unmark TASK_INDEX_NUMBER`
 
-### todo
-Adds a ToDo task (a task with no date specified) to your task list 
+5. todo
+   - Adds a ToDo task (a task with no date specified) to your task list 
 
-Format: `todo TASK_DESCRIPTION`
+   - Format: `todo TASK_DESCRIPTION`
 
-### deadline
-Adds a Deadline task (a task with specified end date) to your task list
+6. deadline
+   - Adds a Deadline task (a task with specified end date) to your task list
 
-Format: `deadline TASK_DESCRIPTION /by YYYY-MM-DD`
+   - Format: `deadline TASK_DESCRIPTION /by YYYY-MM-DD`
 
-### event
-Adds an Event task (a task with specified start and end date) to your task list
+7. event
+   - Adds an Event task (a task with specified start and end date) to your task list
 
-Format: `event TASK_DESCRIPTION /from YYYY-MM-DD /to YYYY-MM-DD`
+   - Format: `event TASK_DESCRIPTION /from YYYY-MM-DD /to YYYY-MM-DD`
 
-### delete
-Deletes a task from your task list
+8. delete
+   - Deletes a task from your task list
 
-Format: `delete TASK_INDEX_NUMBER`
+   - Format: `delete TASK_INDEX_NUMBER`
 
-### find
-Finds all the tasks with the specified keyword in your task list
+9. find
+   - Finds all the tasks with the specified keyword in your task list
 
-Format: `find KEYWORD`
+   - Format: `find KEYWORD`
 
-### schedule
-Lists out all the tasks due/happening on a specified date
+10. schedule
+   - Lists out all the tasks due/happening on a specified date
 
-Format: `schedule YYYY-MM-DD`
+   - Format: `schedule YYYY-MM-DD`
