@@ -13,7 +13,7 @@ Prerequisites:
   java -version
   ```
 
-Running Pluto
+Running Pluto:
 1. Download Pluto.jar from the GitHub release
 2. Move the jar file to an empty folder
 3. Open a terminal or command prompt, navigate to the folder containing Pluto.jar and run:
