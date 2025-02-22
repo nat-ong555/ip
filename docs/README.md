@@ -5,6 +5,23 @@
 Pluto is an easy-to-use task managing chatbot that helps you to organize your tasks.
 This guide will walk you through the available commands and what they do.
 
+## How to run Pluto
+Prerequisites:
+- Ensure you have Java 17 installed
+- You can check your Java version by running:
+  ```
+  java -version
+  ```
+
+Running Pluto
+1. Download Pluto.jar from the GitHub release
+2. Move the jar file to an empty folder
+3. Open a terminal or command prompt, navigate to the folder containing Pluto.jar and run:
+   ```
+   java -jar Pluto.jar
+   ```
+4. Start typing in commands and you're ready to go!
+
 ## Commands
 
 ### Listing all tasks: `list`
