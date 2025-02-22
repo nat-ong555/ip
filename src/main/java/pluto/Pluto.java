@@ -1,6 +1,6 @@
 package pluto;
 
-import java.util.Scanner;
+import javafx.application.Platform;
 
 /**
  * Represents the main Pluto class. This class
@@ -28,6 +28,7 @@ public class Pluto {
     public String getResponse(String input) {
         try {
             if (input.equals("bye")) {
+                Platform.exit();
                 return message.showGoodbyeMessage();
             }
             String response = parser.parse(input);
@@ -38,7 +39,7 @@ public class Pluto {
         } catch (IndexOutOfBoundsException e) {
             return "OOPS! Task number is out of range";
         } catch (NumberFormatException e) {
-            return "OOPS! Task number must be a valid number";
+            return "OOPS! Task number must be a valid number" ;
         }
     }
 

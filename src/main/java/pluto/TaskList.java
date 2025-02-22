@@ -74,7 +74,7 @@ public class TaskList {
      */
     public String removeTask(int taskIndex) throws PlutoException {
         if (taskIndex < 0 || taskIndex >= taskList.size()) {
-            throw new PlutoException("pluto.Task number is out of range.");
+            throw new PlutoException("Task number is out of range.");
         }
         Task removedTask = taskList.remove(taskIndex);
         return message.removeTaskMessage(removedTask, taskList.size());
@@ -103,7 +103,7 @@ public class TaskList {
     }
 
     public String scheduleTasks(String date) {
-        String response = "Here are the tasks scheduled for today:\n";
+        String response = "Here are the tasks scheduled:\n";
         int count = 1;
 
         for (Task task : taskList) {
