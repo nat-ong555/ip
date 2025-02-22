@@ -1,5 +1,6 @@
 package pluto;
 
+import java.util.regex.Pattern;
 
 /**
  * Represents a Parser class. This class processes
@@ -15,6 +16,7 @@ public class Parser {
     private static final String COMMAND_DELETE = "delete";
     private static final String COMMAND_FIND = "find";
     private static final String COMMAND_SCHEDULE = "schedule";
+    private static final Pattern DATE_PATTERN = Pattern.compile("\\d{4}-\\d{2}-\\d{2}");
 
     private TaskList taskList;
 
@@ -123,6 +125,9 @@ public class Parser {
                     + "Please use: deadline <task> /by <yyyy-mm-dd>");
         }
         String[] deadlineParts = parts[1].split(" /by ", 2);
+        if (!DATE_PATTERN.matcher(deadlineParts[1]).matches()) {
+            throw new PlutoException("Invalid date format. Please use yyyy-mm-dd.");
+        }
         return taskList.addTask(new Deadline(deadlineParts[0], deadlineParts[1]));
     }
 
@@ -139,6 +144,9 @@ public class Parser {
                     + "event <task> /from <yyyy-mm-dd> /to <yyyy-mm-dd>");
         }
         String[] eventParts = parts[1].split(" /from | /to ", 3);
+        if (!DATE_PATTERN.matcher(eventParts[1]).matches() || !DATE_PATTERN.matcher(eventParts[2]).matches()) {
+            throw new PlutoException("Invalid date format. Please use yyyy-mm-dd.");
+        }
         return taskList.addTask(new Event(eventParts[0], eventParts[1], eventParts[2]));
     }
 
@@ -183,6 +191,9 @@ public class Parser {
         if (parts.length < 2) {
             throw new PlutoException("Please provide a date for searching.\n" +
                     "Use: schedule <yyyy-mm-dd>");
+        }
+        if (!DATE_PATTERN.matcher(parts[1]).matches()) {
+            throw new PlutoException("Invalid date format. Please use yyyy-mm-dd.");
         }
         return taskList.scheduleTasks(parts[1]);
     }
