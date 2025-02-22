@@ -45,8 +45,7 @@ test {
 }
 
 application {
-    mainClass.set("seedu.duke.Duke")
-    mainClass.set("Launcher")
+    mainClass.set("pluto.gui.Launcher")
 }
 
 shadowJar {
